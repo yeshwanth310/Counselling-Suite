@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+::after,
+::before,
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --primary: #edf0f7;
+  --secondary: #08013b;
+  --text: #3c50e0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(185, 185, 185);
+  border-radius: 20px;
+  height: 120px;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary);
+  font-family: "Poppins", sans-serif;
+}
+nav img {
+  object-fit: contain;
+  width: 80px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 55em;
+  align-items: center;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 3em;
+  font-size: 1.2em;
+  font-weight: 500;
+  z-index: 20;
+}
+nav ul li:nth-of-type(4) {
+  display: none;
+}
+nav {
+  /* padding: 0px 40px 0px 20px; */
+
+  /* Navlinear */
+
+  background: linear-gradient(
+    90.37deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 0.01%,
+    rgba(255, 255, 255, 0.4) 99.73%
+  );
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+}
+.heading {
+  display: flex;
+  justify-content: center;
+}
+.heading p {
+  text-align: center;
+  color: var(--text);
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 40px;
+  padding: 10px 20px;
+
+  width: 296px;
+
+  background: #ffffff;
+  /* Neumorphism */
+
+  box-shadow: 0px 0px 15px #d0e2ff;
+  border-radius: 10px;
+}
+.about-content {
+  font-weight: 500;
+  color: var(--secondary);
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0em;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  line-height: 1.7;
+  align-items: center;
+}
+.about-content p {
+  width: 1000px;
+  text-align: center;
+}
+nav li:not(li:nth-of-type(4))::after {
+  content: "";
+  border-bottom: 1px solid var(--secondary);
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  top: 1px;
+  display: block;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+}
+nav li:hover::after {
+  width: 100%;
+}
+.rightround img {
+  position: absolute;
+  right: -100px;
+  top: -20px;
+  z-index: -1;
+
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+}
+.leftround img {
+  position: absolute;
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+  left: -100px;
+  top: 500px;
+}
+.about-content .about-img img {
+  object-fit: contain;
+  width: 500px;
+  margin-top: -100px;
+  margin-right: -130px;
+  height: 550px;
+}
+@media (max-width: 768px) {
+  ul li:nth-of-type(1),
+  li:nth-of-type(2),
+  li:nth-of-type(3) {
+    display: none;
+  }
+  nav ul li:nth-of-type(4) {
+    display: block;
+  }
+  nav {
+    width: 100%;
+    gap: 0em;
+    justify-content: space-between;
+  }
+  .about-content {
+    font-weight: 500;
+    color: var(--secondary);
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0em;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+    line-height: 1.7;
+    align-items: center;
+  }
+  .about-content p {
+    width: 300px;
+    text-align: center;
+  }
+  .heading {
+    display: flex;
+    justify-content: center;
+  }
+  .heading p {
+    text-align: center;
+    color: var(--text);
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 40px;
+    padding: 10px 20px;
+
+    width: 200px;
+
+    background: #ffffff;
+    /* Neumorphism */
+
+    box-shadow: 0px 0px 15px #d0e2ff;
+    border-radius: 10px;
+  }
+  .rightround img {
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    z-index: -1;
+
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+  }
+  .leftround img {
+    position: absolute;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    left: -20px;
+    top: 600px;
+  }
+  .about-content .about-img img {
+    object-fit: contain;
+    width: 300px;
+    margin-top: -50px;
+    margin-right: -100px;
+    height: 350px;
+  }
+}
