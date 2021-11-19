@@ -1,52 +1,21 @@
-// const swiper = new Swiper(".swiper", {
-//   // Optional parameters
-//   direction: "horizontal",
+// var swiper = new Swiper(".swiper", {
+//   slidesPerView: 3,
+//   spaceBetween: 30,
+//   slidesPerGroup: 3,
 //   loop: true,
-
-//   // If we need pagination
+//   loopFillGroupWithBlank: true,
 //   pagination: {
 //     el: ".swiper-pagination",
+//     clickable: true,
 //   },
-
-//   // Navigation arrows
 //   navigation: {
 //     nextEl: ".swiper-button-next",
 //     prevEl: ".swiper-button-prev",
 //   },
-
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: ".swiper-scrollbar",
-//   },
 // });
-// var swiper = new Swiper('.swiper', {
-//   effect: 'coverflow',
-//   grabCursor: true,
-//   centeredSlides: true,
-//   slidesPerView: 'auto',
-//   coverflowEffect: {
-//     rotate: 50,
-//     stretch: 0,
-//     depth: 100,
-//     modifier: 1,
-//     slideShadows: true,
-//   },
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-// });
-var swiper = new Swiper('.swiper', {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  slidesPerGroup: 3,
-  loop: true,
-  loopFillGroupWithBlank: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+var swiper = new Swiper(".swiper", {
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });

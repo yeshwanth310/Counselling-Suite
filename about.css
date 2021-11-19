@@ -163,9 +163,12 @@ nav li:hover::after {
   }
   nav ul li:nth-of-type(4) {
     display: block;
+    color: var(--secondary);
+    font-size: 1.2em;
   }
   nav {
     width: 100%;
+    padding: 0px 10px 0px 10px;
     gap: 0em;
     justify-content: space-between;
   }
@@ -204,7 +207,7 @@ nav li:hover::after {
     /* Neumorphism */
 
     box-shadow: 0px 0px 15px #d0e2ff;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .rightround img {
     position: absolute;

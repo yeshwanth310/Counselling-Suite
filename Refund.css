@@ -51,7 +51,7 @@ nav {
   gap: 55em;
   align-items: center;
 }
-nav li::after {
+nav li:not(li:nth-of-type(4))::after {
   content: "";
   border-bottom: 1px solid var(--secondary);
   transition: width 0.3s ease-in-out;
@@ -125,4 +125,48 @@ nav {
 }
 .contents span {
   color: var(--text);
+}
+nav ul li:nth-of-type(4) {
+  display: none;
+}
+@media (max-width: 768px) {
+  ul li:nth-of-type(1),
+  li:nth-of-type(2),
+  li:nth-of-type(3) {
+    display: none;
+  }
+  nav ul li:nth-of-type(4) {
+    display: block;
+    cursor: pointer;
+    color: var(--secondary);
+    font-size: 1.2em;
+  }
+  nav {
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    gap: 0em;
+    justify-content: space-between;
+  }
+  .contents p {
+    width: 300px;
+  }
+  .link {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    margin-left: -70px;
+  }
+  .heading {
+    text-align: center;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  .heading p {
+    border-bottom: 1px solid var(--secondary);
+    width: 350px;
+  }
 }
