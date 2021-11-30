@@ -19,6 +19,9 @@
 ::-webkit-scrollbar-track {
   background: none;
 }
+html {
+  overflow: hidden;
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -36,7 +39,7 @@ body {
 }
 nav img {
   object-fit: contain;
-  width: 80px;
+  width: 70px;
 }
 li {
   list-style: none;
@@ -45,15 +48,18 @@ a {
   text-decoration: none;
   color: var(--secondary);
 }
+nav .fas {
+  display: none;
+}
 nav {
   display: flex;
-  justify-content: center;
-  gap: 55em;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   gap: 3em;
@@ -61,9 +67,7 @@ ul {
   font-weight: 500;
   z-index: 20;
 }
-nav ul li:nth-of-type(4) {
-  display: none;
-}
+
 nav {
   /* padding: 0px 40px 0px 20px; */
 
@@ -116,7 +120,7 @@ nav {
   width: 1000px;
   text-align: center;
 }
-nav li:not(li:nth-of-type(4))::after {
+nav li::after {
   content: "";
   border-bottom: 1px solid var(--secondary);
   transition: width 0.3s ease-in-out;
@@ -156,21 +160,44 @@ nav li:hover::after {
   height: 550px;
 }
 @media (max-width: 768px) {
-  ul li:nth-of-type(1),
-  li:nth-of-type(2),
-  li:nth-of-type(3) {
-    display: none;
-  }
-  nav ul li:nth-of-type(4) {
-    display: block;
-    color: var(--secondary);
-    font-size: 1.2em;
-  }
   nav {
-    width: 100%;
-    padding: 0px 10px 0px 10px;
-    gap: 0em;
+    display: flex;
     justify-content: space-between;
+    gap: 0em;
+    padding: 0.5rem;
+  }
+  .no-scroll {
+    overflow-y: hidden;
+  }
+  nav ul {
+    position: fixed;
+    background-color: var(--primary);
+    inset: 0px;
+
+    width: 50%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 50px;
+    gap: 2.5em;
+    transform: translateX(-300px);
+    transition: transform 500ms ease-in-out;
+  }
+  .width {
+    transform: translateX(0px);
+    transition: transform 500ms ease-in-out;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  nav .fas {
+    display: block;
+    transition: all 500ms ease-in-out;
+    color: var(--secondary);
+    font-size: 1.5em;
+    margin-right: 5px;
+  }
+  nav ul li a {
+    font-weight: 500;
+    color: var(--secondary);
   }
   .about-content {
     font-weight: 500;
@@ -226,6 +253,7 @@ nav li:hover::after {
     height: 150px;
     left: -20px;
     top: 600px;
+    z-index: -1;
   }
   .about-content .about-img img {
     object-fit: contain;

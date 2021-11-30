@@ -45,15 +45,18 @@ a {
   text-decoration: none;
   color: var(--secondary);
 }
+nav .fas {
+  display: none;
+}
 nav {
   display: flex;
-  justify-content: center;
-  gap: 55em;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   gap: 3em;
@@ -76,7 +79,7 @@ nav {
   box-sizing: border-box;
   backdrop-filter: blur(4px);
 }
-nav li:not(li:nth-of-type(4))::after {
+nav li::after {
   content: "";
   border-bottom: 1px solid var(--secondary);
   transition: width 0.3s ease-in-out;
@@ -87,9 +90,7 @@ nav li:not(li:nth-of-type(4))::after {
   width: 0%;
   height: 2px;
 }
-nav ul li:nth-of-type(4) {
-  display: none;
-}
+
 nav li:hover::after {
   width: 100%;
 }
@@ -130,22 +131,44 @@ nav li:hover::after {
   color: var(--text);
 }
 @media (max-width: 768px) {
-  ul li:nth-of-type(1),
-  li:nth-of-type(2),
-  li:nth-of-type(3) {
-    display: none;
-  }
-  nav ul li:nth-of-type(4) {
-    display: block;
-    cursor: pointer;
-    color: var(--secondary);
-    font-size: 1.2em;
+  body {
+    overflow: scroll;
   }
   nav {
-    width: 100%;
-    padding: 0px 10px 0px 10px;
-    gap: 0em;
+    display: flex;
     justify-content: space-between;
+    gap: 0em;
+    padding: 0.5rem;
+  }
+  .no-scroll {
+    overflow-y: hidden;
+  }
+  nav ul {
+    position: fixed;
+    background-color: var(--primary);
+    inset: 0px;
+
+    width: 50%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 50px;
+    gap: 2.5em;
+    transform: translateX(-300px);
+    transition: transform 500ms ease-in-out;
+  }
+  .width {
+    transform: translateX(0px);
+    transition: transform 500ms ease-in-out;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  nav .fas {
+    display: block;
+    transition: all 500ms ease-in-out;
+    color: var(--secondary);
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 5px;
   }
   .contents p {
     width: 300px;
