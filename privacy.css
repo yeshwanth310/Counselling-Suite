@@ -44,7 +44,7 @@ a {
 }
 footer {
   background-color: var(--text);
-  height: auto;
+  height: 120px;
   z-index: 222;
 }
 ul {
@@ -133,4 +133,22 @@ footer ul a {
   footer ul a {
     color: var(--primary);
   }
+  footer ul a {
+    color: var(--primary);
+  }
+
+  footer {
+    height: 330px;
+  }
+  footer .logos a {
+    font-size: 0.9rem;
+  }
+}
+.logos {
+  text-align: center;
+}
+.logos a {
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 500;
 }

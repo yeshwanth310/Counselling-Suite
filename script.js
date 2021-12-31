@@ -31,3 +31,10 @@ bars.addEventListener("click", () => {
     bars.setAttribute("class", "fas fa-bars");
   }
 });
+const input = document.querySelector("input");
+const form = document.querySelector("form");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  window.history.back();
+  alert("sub");
+});

@@ -47,7 +47,7 @@ a {
 }
 footer {
   background-color: var(--text);
-  height: auto;
+  height: 120px;
   z-index: 222;
 }
 ul {
@@ -130,6 +130,14 @@ footer ul a {
   margin-right: -130px;
   height: 550px;
 }
+.logos {
+  text-align: center;
+}
+.logos a {
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
 @media (max-width: 768px) {
   .about-content {
     font-weight: 500;
@@ -209,5 +217,11 @@ footer ul a {
   }
   footer ul a {
     color: var(--primary);
+  }
+  .logos a {
+    font-size: 0.9rem;
+  }
+  footer {
+    height: 330px;
   }
 }
